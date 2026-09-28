@@ -1,0 +1,145 @@
+WEBVTT
+
+1
+00:00:00.197 --> 00:00:02.243
+This is a local proof of concept.
+
+2
+00:00:02.243 --> 00:00:06.520
+It compares two ways of turning a receipt image into structured data.
+
+3
+00:00:06.520 --> 00:00:10.798
+Everything you will see runs on this laptop, with synthetic receipts.
+
+4
+00:00:12.009 --> 00:00:16.663
+I choose a synthetic pharmacy receipt that was deliberately saved at low
+
+5
+00:00:16.663 --> 00:00:17.374
+resolution,
+
+6
+00:00:17.374 --> 00:00:19.313
+and run both extraction paths.
+
+7
+00:00:20.025 --> 00:00:25.142
+The direct path gives the image itself to a small local vision-language model,
+
+8
+00:00:25.142 --> 00:00:27.701
+Qwen3-VL, with four billion parameters.
+
+9
+00:00:27.701 --> 00:00:31.506
+The OCR-assisted path first reads the image with RapidOCR,
+
+10
+00:00:31.506 --> 00:00:34.393
+then gives only that text to the same model,
+
+11
+00:00:34.393 --> 00:00:37.870
+with the same instructions and the same field schema.
+
+12
+00:00:37.870 --> 00:00:42.331
+So the only difference is what the model sees. Both are running now;
+
+13
+00:00:42.331 --> 00:00:43.512
+the timer is live.
+
+14
+00:00:43.812 --> 00:01:05.543
+[Live extraction running on this laptop. The wait is not cut.]
+
+15
+00:01:05.743 --> 00:01:11.125
+Here are the two drafts, side by side. Direct is blue, OCR-assisted is orange.
+
+16
+00:01:11.125 --> 00:01:14.645
+They disagree on the receipt number and on the tax.
+
+17
+00:01:14.645 --> 00:01:20.165
+The OCR path returned no tax at all, so its subtotal and total no longer add up,
+
+18
+00:01:20.165 --> 00:01:21.614
+and both are flagged.
+
+19
+00:01:22.322 --> 00:01:27.650
+The OCR text shows why. The tax line came out as unreadable characters,
+
+20
+00:01:27.650 --> 00:01:32.077
+and the model did not invent a value. OCR errors propagate:
+
+21
+00:01:32.077 --> 00:01:35.003
+the model cannot recover what OCR lost.
+
+22
+00:01:35.712 --> 00:01:40.627
+Now the receipt number. The image shows RX-I07618.
+
+23
+00:01:40.627 --> 00:01:47.312
+The direct path read the I as a one. The OCR path read the X as a Y.
+
+24
+00:01:47.312 --> 00:01:48.983
+Neither is right.
+
+25
+00:01:49.993 --> 00:01:53.125
+Every value is a draft until a person approves it.
+
+26
+00:01:53.125 --> 00:01:57.947
+The reviewer starts from the direct values, types the correct receipt number,
+
+27
+00:01:57.947 --> 00:02:00.703
+and adds a note. The edited field is marked.
+
+28
+00:02:01.400 --> 00:02:06.442
+On approval, the app keeps what each path extracted next to the approved values,
+
+29
+00:02:06.442 --> 00:02:11.169
+records the human change, and exports a JSON record with an integrity hash.
+
+30
+00:02:12.806 --> 00:02:18.733
+Across thirty synthetic receipts, the direct path got 170 of 180 fields right,
+
+31
+00:02:18.733 --> 00:02:24.811
+and the OCR path 167: too close to call. The OCR path was faster on this laptop.
+
+32
+00:02:24.811 --> 00:02:27.623
+Both failed on look-alike characters,
+
+33
+00:02:27.623 --> 00:02:31.118
+and six errors per path raised no flag at all.
+
+34
+00:02:31.118 --> 00:02:34.309
+That is why a person makes the final call.
+
+35
+00:02:35.572 --> 00:02:39.718
+The code, the experiment and the full results are in the repository.
+
+36
+00:02:39.718 --> 00:02:40.937
+Thanks for watching.

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+# Local runtime data: uploads, drafts, run log, exports, dev samples
+var/
+# Model weights, media sources and caches (never committed)
+.cache/
+*.onnx
+*.gguf

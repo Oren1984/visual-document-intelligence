@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Document Intelligence — Oren Salami</title>
+  <meta name="description" content="A local proof of concept comparing direct image-to-fields extraction with an OCR-assisted path on 30 synthetic receipts, using the same local model for both, with human review and approval.">
+  <meta property="og:title" content="Visual Document Intelligence — Oren Salami">
+  <meta property="og:description" content="Image or OCR text? Two local extraction paths, one model, 30 synthetic receipts, measured honestly — and a person approves the result.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="media/demo-poster.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav id="navbar" aria-label="Main">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero">
+        <span class="brand-name">Oren Salami</span><span class="brand-sep">/</span><span class="brand-role">Visual Document Intelligence</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#paths">Two paths</a></li>
+        <li><a href="#experiment">Experiment</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#review">Review</a></li>
+        <li><a href="#limits">Limits</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section id="hero" class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="badge-dot" aria-hidden="true"></span>Proof of concept · runs locally · synthetic receipts · human-approved</div>
+          <h1 class="hero-title">Visual Document<br><span class="gradient-text">Intelligence</span></h1>
+          <p class="hero-subtitle">
+            Should a model read a receipt from the <strong>image</strong>, or from <strong>OCR text</strong>? This project
+            runs both paths on one laptop — same local model, same fields, same scoring — measures where each one fails,
+            and treats every result as a draft until a person approves it.
+          </p>
+          <div class="hero-stats" role="list" aria-label="Key numbers">
+            <div class="stat-item" role="listitem"><span class="stat-number">30</span><span class="stat-label">synthetic receipts</span></div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem"><span class="stat-number c-direct">[[d_correct]]/180</span><span class="stat-label">direct: fields right</span></div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem"><span class="stat-number c-ocr">[[o_correct]]/180</span><span class="stat-label">OCR-assisted: fields right</span></div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem"><span class="stat-number">[[tests]]</span><span class="stat-label">automated tests</span></div>
+          </div>
+          <div class="hero-cta">
+            <a href="#demo" class="btn-primary">Watch the demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#results" class="btn-outline">See the measured results</a>
+          </div>
+          <p class="honesty">
+            <strong>Three things, kept apart:</strong> the <em>code</em> (a local app and a two-path pipeline), the
+            <em>experiment</em> (30 generated receipts, scored against their own ground truth), and this <em>site</em>,
+            which summarises both. The experiment asks the question of a 2026 paper at laptop scale; it does not
+            reproduce that paper.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The problem</span>
+          <h2 class="section-title">Reading a receipt is easy to get almost right</h2>
+          <p class="section-sub">A receipt image has to become a handful of fields a system can trust: merchant, date, receipt number, subtotal, tax, total. The hard cases are the ordinary ones.</p>
+        </div>
+        <div class="grid-3">
+          <article class="info-card">
+            <h3>Look-alike characters</h3>
+            <p>An ID like <code>RX-I07618</code> becomes <code>RX-107618</code>. Both look plausible; nothing about the output says it is wrong.</p>
+          </article>
+          <article class="info-card">
+            <h3>Distractors next to the answer</h3>
+            <p>Cash tendered, change, savings and a "return by" date sit right beside the total and the purchase date.</p>
+          </article>
+          <article class="info-card">
+            <h3>Degraded images</h3>
+            <p>Tilted photos, blur, JPEG noise, faded thermal paper, low resolution. Each hits the two paths differently.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="paths" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">How it works</span>
+          <h2 class="section-title">Two paths, one model, one set of rules</h2>
+          <p class="section-sub">The only difference between the paths is what the model is given. Everything after that is shared.</p>
+        </div>
+        <figure class="diagram" aria-labelledby="flow-cap">
+          <svg viewBox="0 0 1000 330" role="img" aria-labelledby="flow-title flow-desc">
+            <title id="flow-title">Extraction flow</title>
+            <desc id="flow-desc">A validated receipt image goes either directly to Qwen3-VL, or through RapidOCR and line rebuilding to the same Qwen3-VL as text. Both outputs pass through the same normalisation and validation, get review flags, and go to human review, which produces an approved JSON export.</desc>
+            <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#74869E"/></marker></defs>
+            <g font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#F8FAFC">
+              <rect x="10" y="120" width="150" height="90" rx="10" fill="#16283F" stroke="#33507A"/>
+              <text x="85" y="155" text-anchor="middle" font-weight="600">Receipt image</text>
+              <text x="85" y="177" text-anchor="middle" fill="#A9B8CC" font-size="12">validated, re-encoded</text>
+              <text x="85" y="194" text-anchor="middle" fill="#A9B8CC" font-size="12">PNG, no metadata</text>
+
+              <rect x="215" y="30" width="300" height="80" rx="10" fill="#12233A" stroke="#3987e5" stroke-width="2"/>
+              <text x="365" y="63" text-anchor="middle" font-weight="600">Direct</text>
+              <text x="365" y="86" text-anchor="middle" fill="#A9B8CC" font-size="12">image → Qwen3-VL 4B (local)</text>
+
+              <rect x="215" y="220" width="140" height="80" rx="10" fill="#12233A" stroke="#d95926" stroke-width="2"/>
+              <text x="285" y="253" text-anchor="middle" font-weight="600">RapidOCR</text>
+              <text x="285" y="276" text-anchor="middle" fill="#A9B8CC" font-size="12">+ line rebuilding</text>
+              <rect x="375" y="220" width="140" height="80" rx="10" fill="#12233A" stroke="#d95926" stroke-width="2"/>
+              <text x="445" y="253" text-anchor="middle" font-weight="600">same model</text>
+              <text x="445" y="276" text-anchor="middle" fill="#A9B8CC" font-size="12">text-only prompt</text>
+
+              <rect x="570" y="120" width="175" height="90" rx="10" fill="#16283F" stroke="#33507A"/>
+              <text x="657" y="152" text-anchor="middle" font-weight="600">Same schema</text>
+              <text x="657" y="173" text-anchor="middle" fill="#A9B8CC" font-size="12">normalise · validate</text>
+              <text x="657" y="192" text-anchor="middle" fill="#A9B8CC" font-size="12">flag · compare paths</text>
+
+              <rect x="800" y="50" width="190" height="90" rx="10" fill="#16283F" stroke="#22C55E" stroke-width="2"/>
+              <text x="895" y="83" text-anchor="middle" font-weight="600">Human review</text>
+              <text x="895" y="105" text-anchor="middle" fill="#A9B8CC" font-size="12">draft until approved</text>
+              <text x="895" y="122" text-anchor="middle" fill="#A9B8CC" font-size="12">corrections recorded</text>
+
+              <rect x="800" y="200" width="190" height="90" rx="10" fill="#16283F" stroke="#33507A"/>
+              <text x="895" y="233" text-anchor="middle" font-weight="600">Approved export</text>
+              <text x="895" y="255" text-anchor="middle" fill="#A9B8CC" font-size="12">extracted + approved</text>
+              <text x="895" y="272" text-anchor="middle" fill="#A9B8CC" font-size="12">+ changes + hash</text>
+            </g>
+            <g stroke="#74869E" stroke-width="1.6" fill="none" marker-end="url(#ah)">
+              <path d="M160 150 C 185 150, 190 70, 213 70"/>
+              <path d="M160 180 C 185 180, 190 260, 213 260"/>
+              <path d="M355 260 H373"/>
+              <path d="M515 70 C 545 70, 545 150, 568 150"/>
+              <path d="M515 260 C 545 260, 545 180, 568 180"/>
+              <path d="M745 150 C 770 150, 775 95, 798 95"/>
+              <path d="M895 140 V198"/>
+            </g>
+          </svg>
+          <figcaption id="flow-cap">Both paths run locally. The flags a reviewer sees come only from rules (missing, invalid, subtotal + tax ≠ total) and from the two paths disagreeing — no invented confidence scores.</figcaption>
+        </figure>
+        <div class="grid-2">
+          <article class="path-card direct">
+            <span class="path-tag">Direct</span>
+            <h3>Image → Qwen3-VL</h3>
+            <p>The validated image goes straight to a 4.4-billion-parameter vision-language model (Qwen3-VL 4B Instruct, 4-bit, Apache-2.0) served by Ollama on the laptop's integrated GPU. It returns the six fields as JSON, constrained by a schema.</p>
+          </article>
+          <article class="path-card ocr">
+            <span class="path-tag">OCR-assisted</span>
+            <h3>RapidOCR text → Qwen3-VL</h3>
+            <p>RapidOCR (open PP-OCR models on ONNX Runtime, CPU) reads the image; its boxes are rebuilt into printed lines. Only that text goes to the <em>same</em> model, with the same instructions and schema.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiment" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The experiment</span>
+          <h2 class="section-title">30 receipts, fixed before the first run</h2>
+          <p class="section-sub">Five layouts × six image conditions, generated with their ground truth. Rules, scoring and prompt were written down before the evaluation set was ever run; a separate dev set was used for debugging.</p>
+        </div>
+        <div class="samples">
+          <figure><img src="media/sample-clean.png" alt="Synthetic thermal receipt, clean: Greenleaf-style grocery receipt with items, subtotal, VAT and total" loading="lazy" width="470" height="614"><figcaption>clean · thermal</figcaption></figure>
+          <figure><img src="media/sample-rotated.png" alt="Synthetic hardware invoice rotated about four degrees, with a return-by date below the total" loading="lazy" width="726" height="512"><figcaption>rotated · hardware</figcaption></figure>
+          <figure><img src="media/sample-lowres.png" alt="Synthetic pharmacy receipt at low resolution; the receipt number RX-I07618 is blurry" loading="lazy" width="520" height="540"><figcaption>low resolution · grocer</figcaption></figure>
+        </div>
+        <div class="grid-3 facts">
+          <div class="fact"><span class="fact-k">Fields</span><p>merchant · date · receipt no. · subtotal · tax · total — money compared to the cent, dates as ISO, IDs character by character.</p></div>
+          <div class="fact"><span class="fact-k">Held constant</span><p>model, instructions, JSON schema, temperature 0 and seed, normalisation, scoring. Only the input differs.</p></div>
+          <div class="fact"><span class="fact-k">Reproducible</span><p>Two full runs gave identical values for all 360 predicted fields. Every model output and OCR text is saved in the repository.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Measured results</span>
+          <h2 class="section-title">Close on accuracy — different in how they fail</h2>
+          <p class="section-sub">180 field slots per path (30 receipts × 6 fields). Measured on an Intel Core Ultra 7 258V laptop, model on the Arc 140V iGPU.</p>
+        </div>
+        <div class="grid-4 tiles">
+          <div class="tile t-direct"><span class="tile-n">[[d_acc]]</span><span class="tile-l">Direct: field accuracy ([[d_correct]]/180)</span></div>
+          <div class="tile t-ocr"><span class="tile-n">[[o_acc]]</span><span class="tile-l">OCR-assisted: field accuracy ([[o_correct]]/180)</span></div>
+          <div class="tile"><span class="tile-n">[[d_med]] s · [[o_med]] s</span><span class="tile-l">median per receipt (direct · OCR)</span></div>
+          <div class="tile"><span class="tile-n">[[d_exact]] · [[o_exact]]</span><span class="tile-l">receipts fully correct (of 30)</span></div>
+        </div>
+        <div class="results-grid">
+          <figure class="chart">
+            <img src="media/errors-by-field.svg" alt="Bar chart of errors per field out of 30. Direct: merchant 0, date 0, receipt number [[d_err_id]], subtotal [[d_err_sub]], tax [[d_err_tax]], total 0. OCR-assisted: merchant [[o_err_m]], date [[o_err_d]], receipt number [[o_err_id]], subtotal [[o_err_sub]], tax [[o_err_tax]], total 0." width="720" height="386">
+          </figure>
+          <div class="result-notes">
+            <h3>What the numbers say</h3>
+            <ul class="checks">
+              <li><strong>Too close to call.</strong> A [[diff]]-slot difference on 30 synthetic receipts is noise, not a finding.</li>
+              <li><strong>Look-alike IDs dominate both.</strong> O/0, I/1, S/5 swaps are most of each path's errors.</li>
+              <li><strong>OCR errors propagate.</strong> A tax line read as <code>TL XEI</code> left the model nothing to extract; a garbled date became <code>2023-08-17</code>.</li>
+              <li><strong>The image path misreads digits.</strong> <code>67.58</code> read as <code>667.58</code> — caught by the sum rule.</li>
+              <li><strong>OCR-assisted was faster here</strong> ([[o_med]] s vs [[d_med]] s median): a text prompt is much shorter than an image prompt.</li>
+            </ul>
+          </div>
+        </div>
+        <details class="table-details">
+          <summary>Per-field table (correct / incorrect / missing / spurious, out of 30)</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Field</th><th scope="col">Direct</th><th scope="col">OCR-assisted</th></tr></thead>
+              <tbody>[[field_rows]]</tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="review" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Human review</span>
+          <h2 class="section-title">Every value is a draft until a person approves it</h2>
+          <p class="section-sub">The app shows both drafts side by side, flags what it can justify, and records every human change next to what the models extracted.</p>
+        </div>
+        <div class="shots">
+          <figure class="shot wide">
+            <a href="media/02-both-paths.png"><img src="media/02-both-paths.png" alt="The app with the low-resolution receipt on the left and both drafts on the right: the paths disagree on the receipt number and tax; the OCR-assisted path shows sum-conflict flags on subtotal and total" loading="lazy" width="1280" height="720"></a>
+            <figcaption>Live run on receipt r30: the two paths disagree on the receipt number and tax; the OCR path lost the tax line, so its amounts no longer add up.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="media/03-ocr-text.png"><img src="media/03-ocr-text.png" alt="OCR text panel showing the tax line recognised as the garbage string TL XEI and the receipt number as RY-107618" loading="lazy" width="730" height="290"></a>
+            <figcaption>What the OCR path actually gave the model: the tax line came out as <code>TL XEI</code>.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="media/05-approved.png"><img src="media/05-approved.png" alt="Approved result card listing the human change RX-107618 to RX-I07618 typed by the reviewer, the approved values, and a download link with an integrity hash" loading="lazy" width="772" height="1179"></a>
+            <figcaption>Neither path read <code>RX-I07618</code>. The reviewer typed it; the export records the change and its source.</figcaption>
+          </figure>
+        </div>
+        <div class="grid-3 facts">
+          <div class="fact"><span class="fact-k">Flags that caught errors</span><p>The sum rule caught the direct path's digit misreads; running both paths turned [[disagree_caught]] more errors into visible disagreements.</p></div>
+          <div class="fact warn"><span class="fact-k">Errors no flag caught</span><p><strong>[[d_unflagged]] per path.</strong> When both paths make the same mistake — a look-alike ID, a subtotal copied from the total — nothing looks wrong. That is why a person approves.</p></div>
+          <div class="fact"><span class="fact-k">What the export keeps</span><p>Both drafts, the approved values, per-field provenance (direct, OCR or human), the reviewer note and a sha256 over the record.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="limits" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Limits</span>
+          <h2 class="section-title">What this does not show</h2>
+        </div>
+        <div class="grid-2">
+          <ul class="limits">
+            <li><strong>Small and synthetic.</strong> 30 generated receipts in English; real receipts bring creases, shadows, logos, handwriting and far more layouts.</li>
+            <li><strong>One small model, one prompt, one OCR engine.</strong> Another choice could change the ranking.</li>
+            <li><strong>Six flat fields.</strong> No line items or nested structures — where the paper finds much of the difficulty.</li>
+          </ul>
+          <ul class="limits">
+            <li><strong>Image + OCR together was not tested</strong> — the paper's third setting.</li>
+            <li><strong>Timing is this laptop.</strong> On the CPU alone, an image call took ~100 s instead of ~20 s.</li>
+            <li><strong>A local single-user tool.</strong> No accounts, HTTPS or multi-user review; approval records a note, not an identity.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Demo</span>
+          <h2 class="section-title">One real run, start to finish</h2>
+          <p class="section-sub">Source receipt → both extraction paths → drafts with a visible error and a missing field → human correction and approval → exported result. The extraction is live inference on this laptop; the reviewer's clicks and typing are scripted.</p>
+        </div>
+        <div class="video-wrap">
+          <video controls preload="metadata" poster="media/demo-poster.png" width="1280" height="816">
+            <source src="media/demo.mp4" type="video/mp4">
+            <track kind="captions" src="media/demo.en.vtt" srclang="en" label="English">
+            Your browser cannot play this video. <a href="media/demo.mp4">Download the demo (MP4)</a>.
+          </video>
+        </div>
+        <p class="video-note">[[video_len]] · English narration (synthetic voice, Kokoro-82M) · captions burned in below the picture and available as a track · understandable muted.
+          Music: "Airport Lounge" Kevin MacLeod (incompetech.com), licensed under Creative Commons: By Attribution 4.0,
+          <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">creativecommons.org/licenses/by/4.0</a>
+          — excerpt, volume lowered and ducked under the narration, fades added.</p>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Research basis</span>
+          <h2 class="section-title">Two papers, used for what they are</h2>
+        </div>
+        <div class="grid-2">
+          <a class="paper-card" href="https://arxiv.org/abs/2603.02789" target="_blank" rel="noopener">
+            <span class="paper-kind">Primary research basis · 2026</span>
+            <h3>OCR or Not? Rethinking Document Information Extraction in the MLLMs Era with Real-World Large-Scale Datasets</h3>
+            <p class="paper-authors">Shen, Yuan, Ghosh, Mai, Dahlmeier · arXiv:2603.02789</p>
+            <p>Benchmarks multimodal LLMs on real business documents with OCR text only, image only, and both; finds image-only input can match OCR-enhanced input for powerful models. <strong>We borrow its question</strong> — and test two of its three settings with one small local model on synthetic receipts. Its datasets, models and results are not reproduced.</p>
+            <span class="paper-link">arxiv.org/abs/2603.02789 →</span>
+          </a>
+          <a class="paper-card" href="https://arxiv.org/abs/2111.15664" target="_blank" rel="noopener">
+            <span class="paper-kind">Historical background · 2021 / ECCV 2022</span>
+            <h3>OCR-free Document Understanding Transformer (Donut)</h3>
+            <p class="paper-authors">Geewook Kim et al. · arXiv:2111.15664</p>
+            <p>Argued that document understanding need not depend on a separate OCR stage, citing OCR's cost, inflexibility and error propagation, and read document images end to end. <strong>It motivates the direct path</strong>; we did not implement or run Donut.</p>
+            <span class="paper-link">arxiv.org/abs/2111.15664 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container contact">
+        <div>
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Oren Salami</h2>
+          <p class="section-sub left">The third project in a series of local, evidence-first AI proofs of concept.</p>
+          <div class="contact-links">
+            <a class="btn-outline" href="https://nfc4u.co.il/Salami/Ai-Systems-Portfolio/" target="_blank" rel="noopener">Main Portfolio</a>
+            <a class="btn-outline" href="https://github.com/Oren1984" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn-outline" href="https://www.linkedin.com/in/oren-salami-b2988a224/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn-outline" href="https://github.com/Oren1984/visual-document-intelligence" target="_blank" rel="noopener">Repository</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Visual Document Intelligence · local proof of concept · synthetic receipts only.
+        Model: Qwen3-VL 4B Instruct (Apache-2.0) · OCR: RapidOCR / PaddleOCR models (Apache-2.0) · narration: Kokoro-82M (Apache-2.0).
+        Music in the demo: "Airport Lounge" Kevin MacLeod (incompetech.com), CC BY 4.0.</p>
+      <p>Viewing locally: open <code>index.html</code>, or run <code>python -m http.server</code> in this folder and visit <code>http://localhost:8000</code>.</p>
+    </div>
+  </footer>
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

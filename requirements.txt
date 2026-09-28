@@ -1,0 +1,10 @@
+# Runtime (local). Tested on Windows 11, Python 3.12.10. The extraction model runs in Ollama (installed separately).
+fastapi==0.141.1
+starlette==1.7.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+pydantic==2.13.5
+httpx==0.28.1
+pillow==12.3.0
+rapidocr-onnxruntime==1.4.4
+onnxruntime==1.30.0

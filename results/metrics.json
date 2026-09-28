@@ -1,0 +1,488 @@
+{
+  "documents": 30,
+  "paths": {
+    "direct": {
+      "label": "Direct: image → Qwen3-VL",
+      "documents": 30,
+      "field_slots": 180,
+      "correct": 170,
+      "field_accuracy": 0.9444,
+      "exact_match_docs": 21,
+      "exact_match_rate": 0.7,
+      "per_field": {
+        "merchant_name": {
+          "correct": 30,
+          "incorrect": 0,
+          "missing": 0,
+          "spurious": 0
+        },
+        "receipt_date": {
+          "correct": 30,
+          "incorrect": 0,
+          "missing": 0,
+          "spurious": 0
+        },
+        "receipt_number": {
+          "correct": 24,
+          "incorrect": 6,
+          "missing": 0,
+          "spurious": 0
+        },
+        "subtotal": {
+          "correct": 27,
+          "incorrect": 1,
+          "missing": 0,
+          "spurious": 2
+        },
+        "tax": {
+          "correct": 29,
+          "incorrect": 1,
+          "missing": 0,
+          "spurious": 0
+        },
+        "total": {
+          "correct": 30,
+          "incorrect": 0,
+          "missing": 0,
+          "spurious": 0
+        }
+      },
+      "kv": {
+        "tp": 162,
+        "fp": 10,
+        "fn": 8,
+        "precision": 0.9419,
+        "recall": 0.9529,
+        "f1": 0.9474
+      },
+      "failed_runs": 0,
+      "seconds": {
+        "mean": 20.01,
+        "median": 19.55,
+        "min": 16.24,
+        "max": 30.08,
+        "stages_mean": {
+          "model_s": 20.01
+        }
+      },
+      "by_condition": {
+        "clean": {
+          "correct": 30,
+          "slots": 30,
+          "accuracy": 1.0
+        },
+        "rotated": {
+          "correct": 29,
+          "slots": 30,
+          "accuracy": 0.9667
+        },
+        "blurred": {
+          "correct": 30,
+          "slots": 30,
+          "accuracy": 1.0
+        },
+        "noisy_jpeg": {
+          "correct": 27,
+          "slots": 30,
+          "accuracy": 0.9
+        },
+        "faded": {
+          "correct": 30,
+          "slots": 30,
+          "accuracy": 1.0
+        },
+        "low_res": {
+          "correct": 24,
+          "slots": 30,
+          "accuracy": 0.8
+        }
+      },
+      "review": {
+        "errors": 10,
+        "flagged_rule": 2,
+        "flagged_disagree_only": 2,
+        "unflagged": 6,
+        "false_alarms": 10
+      },
+      "errors": [
+        {
+          "id": "r06",
+          "template": "thermal",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "GL-B5O9S",
+          "predicted": "GL-05095",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r06",
+          "template": "thermal",
+          "condition": "low_res",
+          "field": "tax",
+          "outcome": "incorrect",
+          "truth": "7.88",
+          "predicted": 7.68,
+          "flagged_rule": true,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r10",
+          "template": "boutique",
+          "condition": "noisy_jpeg",
+          "field": "subtotal",
+          "outcome": "spurious",
+          "truth": null,
+          "predicted": 39.3,
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r12",
+          "template": "boutique",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "INV-1II717",
+          "predicted": "INV-111717",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r16",
+          "template": "cafe",
+          "condition": "noisy_jpeg",
+          "field": "subtotal",
+          "outcome": "spurious",
+          "truth": null,
+          "predicted": 69.52,
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r18",
+          "template": "cafe",
+          "condition": "low_res",
+          "field": "subtotal",
+          "outcome": "incorrect",
+          "truth": "67.58",
+          "predicted": 667.58,
+          "flagged_rule": true,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r20",
+          "template": "hardware",
+          "condition": "rotated",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "HP-01738O",
+          "predicted": "HP-017380",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r24",
+          "template": "hardware",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "HP-04S5515",
+          "predicted": "HP-0455515",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r28",
+          "template": "grocer",
+          "condition": "noisy_jpeg",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "RX-O4957",
+          "predicted": "RX-04957",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r30",
+          "template": "grocer",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "RX-I07618",
+          "predicted": "RX-107618",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        }
+      ]
+    },
+    "ocr": {
+      "label": "OCR-assisted: RapidOCR text → Qwen3-VL",
+      "documents": 30,
+      "field_slots": 180,
+      "correct": 167,
+      "field_accuracy": 0.9278,
+      "exact_match_docs": 20,
+      "exact_match_rate": 0.6667,
+      "per_field": {
+        "merchant_name": {
+          "correct": 28,
+          "incorrect": 2,
+          "missing": 0,
+          "spurious": 0
+        },
+        "receipt_date": {
+          "correct": 29,
+          "incorrect": 1,
+          "missing": 0,
+          "spurious": 0
+        },
+        "receipt_number": {
+          "correct": 23,
+          "incorrect": 7,
+          "missing": 0,
+          "spurious": 0
+        },
+        "subtotal": {
+          "correct": 28,
+          "incorrect": 0,
+          "missing": 0,
+          "spurious": 2
+        },
+        "tax": {
+          "correct": 29,
+          "incorrect": 0,
+          "missing": 1,
+          "spurious": 0
+        },
+        "total": {
+          "correct": 30,
+          "incorrect": 0,
+          "missing": 0,
+          "spurious": 0
+        }
+      },
+      "kv": {
+        "tp": 159,
+        "fp": 12,
+        "fn": 11,
+        "precision": 0.9298,
+        "recall": 0.9353,
+        "f1": 0.9326
+      },
+      "failed_runs": 0,
+      "seconds": {
+        "mean": 11.84,
+        "median": 11.41,
+        "min": 8.77,
+        "max": 19.91,
+        "stages_mean": {
+          "ocr_s": 4.24,
+          "model_s": 7.6
+        }
+      },
+      "by_condition": {
+        "clean": {
+          "correct": 30,
+          "slots": 30,
+          "accuracy": 1.0
+        },
+        "rotated": {
+          "correct": 28,
+          "slots": 30,
+          "accuracy": 0.9333
+        },
+        "blurred": {
+          "correct": 30,
+          "slots": 30,
+          "accuracy": 1.0
+        },
+        "noisy_jpeg": {
+          "correct": 26,
+          "slots": 30,
+          "accuracy": 0.8667
+        },
+        "faded": {
+          "correct": 30,
+          "slots": 30,
+          "accuracy": 1.0
+        },
+        "low_res": {
+          "correct": 23,
+          "slots": 30,
+          "accuracy": 0.7667
+        }
+      },
+      "review": {
+        "errors": 13,
+        "flagged_rule": 0,
+        "flagged_disagree_only": 7,
+        "unflagged": 6,
+        "false_alarms": 5
+      },
+      "errors": [
+        {
+          "id": "r06",
+          "template": "thermal",
+          "condition": "low_res",
+          "field": "receipt_date",
+          "outcome": "incorrect",
+          "truth": "2026-03-17",
+          "predicted": "2023-08-17",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r06",
+          "template": "thermal",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "GL-B5O9S",
+          "predicted": "GL-05095",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r08",
+          "template": "boutique",
+          "condition": "rotated",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "INV-519S5O",
+          "predicted": "INV-519S50",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r10",
+          "template": "boutique",
+          "condition": "noisy_jpeg",
+          "field": "merchant_name",
+          "outcome": "incorrect",
+          "truth": "Wren & Willow",
+          "predicted": "Wren &Willow",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r10",
+          "template": "boutique",
+          "condition": "noisy_jpeg",
+          "field": "subtotal",
+          "outcome": "spurious",
+          "truth": null,
+          "predicted": 39.3,
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r12",
+          "template": "boutique",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "INV-1II717",
+          "predicted": "INV-111717",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r16",
+          "template": "cafe",
+          "condition": "noisy_jpeg",
+          "field": "subtotal",
+          "outcome": "spurious",
+          "truth": null,
+          "predicted": 69.52,
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r18",
+          "template": "cafe",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "TOO5IO56",
+          "predicted": "TransT0051056",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r20",
+          "template": "hardware",
+          "condition": "rotated",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "HP-01738O",
+          "predicted": "HP-017380",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r24",
+          "template": "hardware",
+          "condition": "low_res",
+          "field": "merchant_name",
+          "outcome": "incorrect",
+          "truth": "Keystone Builders Depot",
+          "predicted": "KEYSTONEBUILDERS DEPOT",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r28",
+          "template": "grocer",
+          "condition": "noisy_jpeg",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "RX-O4957",
+          "predicted": "RX-04957",
+          "flagged_rule": false,
+          "flagged_disagreement": false
+        },
+        {
+          "id": "r30",
+          "template": "grocer",
+          "condition": "low_res",
+          "field": "receipt_number",
+          "outcome": "incorrect",
+          "truth": "RX-I07618",
+          "predicted": "RY-107618",
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        },
+        {
+          "id": "r30",
+          "template": "grocer",
+          "condition": "low_res",
+          "field": "tax",
+          "outcome": "missing",
+          "truth": "5.30",
+          "predicted": null,
+          "flagged_rule": false,
+          "flagged_disagreement": true
+        }
+      ]
+    }
+  },
+  "environment": {
+    "machine": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "python": "3.12.10",
+    "os": "Windows-11",
+    "ocr": "rapidocr_onnxruntime 1.4.4 · det ch_PP-OCRv4 · rec en_PP-OCRv3_rec",
+    "model": "qwen3-vl:4b-instruct",
+    "digest": "ee4b975b58c17ce268cd19d40db35d5edc64603035d2ffc1fee1968eb0947f7b",
+    "ollama": "0.34.4",
+    "endpoint": "http://127.0.0.1:11435",
+    "processor": "GPU",
+    "decoding": {
+      "temperature": 0,
+      "seed": 7,
+      "num_ctx": 8192
+    }
+  },
+  "created": "2026-09-28T17:12:06+00:00"
+}

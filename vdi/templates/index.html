@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Document Intelligence — local POC</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-title">Visual Document Intelligence</span>
+      <span class="pill">local POC · synthetic receipts</span>
+    </div>
+    <div id="health" class="health" role="status" aria-live="polite">Checking local model…</div>
+  </header>
+
+  <main id="main" class="layout">
+    <section class="panel doc-panel" aria-labelledby="h-doc">
+      <h2 id="h-doc"><span class="step">1</span> Document</h2>
+      <div class="source-row">
+        <label for="sample">Sample receipt</label>
+        <select id="sample"><option value="">— choose a sample —</option></select>
+      </div>
+      <div class="source-row">
+        <label for="upload">…or upload a PNG/JPEG (max <span id="maxmb">5</span> MB)</label>
+        <input id="upload" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg">
+      </div>
+      <p class="hint">Use synthetic or authorised documents only. Images stay on this machine.</p>
+      <div id="doc-error" class="error" role="alert" hidden></div>
+      <figure class="preview" id="preview-wrap" hidden>
+        <img id="preview" alt="">
+        <figcaption id="preview-cap"></figcaption>
+      </figure>
+
+      <h2 id="h-run"><span class="step">2</span> Extract</h2>
+      <fieldset class="methods" aria-labelledby="h-run">
+        <legend class="sr-only">Extraction path</legend>
+        <label class="method"><input type="radio" name="method" value="both" checked>
+          <span><strong>Both</strong><small>compare the two paths</small></span></label>
+        <label class="method"><input type="radio" name="method" value="direct">
+          <span><strong>Direct</strong><small>image → Qwen3-VL</small></span></label>
+        <label class="method"><input type="radio" name="method" value="ocr">
+          <span><strong>OCR-assisted</strong><small>RapidOCR text → Qwen3-VL</small></span></label>
+      </fieldset>
+      <button id="run" class="btn primary" disabled>Run extraction</button>
+      <p id="progress" class="progress" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section class="panel review-panel" aria-labelledby="h-review">
+      <h2 id="h-review"><span class="step">3</span> Review <span class="draft-tag" id="draft-tag" hidden>DRAFT — not approved</span></h2>
+      <p class="empty" id="review-empty">Run an extraction to see the fields here. Every value is a draft until you approve it.</p>
+      <div id="review" hidden>
+        <div class="base-row" id="base-row">
+          <span>Start the review from:</span>
+          <label><input type="radio" name="base" value="direct"> Direct</label>
+          <label><input type="radio" name="base" value="ocr"> OCR-assisted</label>
+        </div>
+        <div class="table-wrap">
+          <table class="fields">
+            <caption class="sr-only">Extracted fields by path, and the reviewed value</caption>
+            <thead><tr id="thead-row"></tr></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+        <p class="legend">
+          <span class="chip missing">missing</span> required but not found ·
+          <span class="chip invalid">invalid</span> cannot be read as the field's type ·
+          <span class="chip conflict">sum conflict</span> subtotal + tax ≠ total ·
+          <span class="chip differ">paths differ</span> the two paths disagree ·
+          <span class="chip muted">not found</span> optional, absent.
+          No confidence scores are shown: the model gives none that are calibrated.
+        </p>
+        <div id="timings" class="timings"></div>
+        <details id="ocr-details" hidden><summary>Text the OCR path gave the model</summary><pre id="ocr-text"></pre></details>
+
+        <h2 class="approve-h"><span class="step">4</span> Approve</h2>
+        <label for="note" class="note-label">Reviewer note (optional)</label>
+        <input id="note" type="text" maxlength="500" placeholder="e.g. corrected receipt number from the image">
+        <div id="review-error" class="error" role="alert" hidden></div>
+        <label id="ack-row" class="ack" hidden><input type="checkbox" id="ack"> I checked the receipt: the amounts really are printed like this.</label>
+        <button id="approve" class="btn success">Approve reviewed values</button>
+      </div>
+      <div id="result" class="result" hidden aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="foot">Runs, drafts and exports are stored locally in <code>var/</code>. Inspect outcomes with <code>python -m vdi runs</code>.</footer>
+</body>
+</html>

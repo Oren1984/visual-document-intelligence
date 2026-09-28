@@ -1,0 +1,6 @@
+# Only for regenerating screenshots and the demo video (tools/capture_demo.py, tools/make_video.py).
+-r requirements.txt
+playwright==1.63.0
+kokoro-onnx==0.6.1
+soundfile==0.14.0
+imageio-ffmpeg==0.6.0

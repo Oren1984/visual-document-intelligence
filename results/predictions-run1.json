@@ -1,0 +1,1672 @@
+{
+  "created": "2026-09-28T16:51:16+00:00",
+  "environment": {
+    "machine": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "python": "3.12.10",
+    "os": "Windows-11",
+    "ocr": "rapidocr_onnxruntime 1.4.4 · det ch_PP-OCRv4 · rec en_PP-OCRv3_rec",
+    "model": "qwen3-vl:4b-instruct",
+    "digest": "ee4b975b58c17ce268cd19d40db35d5edc64603035d2ffc1fee1968eb0947f7b",
+    "ollama": "0.34.4",
+    "endpoint": "http://127.0.0.1:11435",
+    "processor": "GPU",
+    "decoding": {
+      "temperature": 0,
+      "seed": 7,
+      "num_ctx": 8192
+    }
+  },
+  "predictions": [
+    {
+      "id": "r01",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 8.29,
+        "stages": {
+          "model_s": 8.29
+        },
+        "fields": {
+          "merchant_name": "GREENLEAF MARKET",
+          "receipt_date": "2026-02-20",
+          "receipt_number": "GL-568151",
+          "subtotal": 88.99,
+          "tax": 15.13,
+          "total": 104.12
+        },
+        "raw_output": "{\n  \"merchant_name\": \"GREENLEAF MARKET\",\n  \"receipt_date\": \"2026-02-20\",\n  \"receipt_number\": \"GL-568151\",\n  \"subtotal\": 88.99,\n  \"tax\": 15.13,\n  \"total\": 104.12\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 11.17,
+        "stages": {
+          "ocr_s": 3.49,
+          "model_s": 7.68
+        },
+        "fields": {
+          "merchant_name": "GREENLEAF MARKET",
+          "receipt_date": "2026-02-20",
+          "receipt_number": "GL-568151",
+          "subtotal": 88.99,
+          "tax": 15.13,
+          "total": 104.12
+        },
+        "raw_output": "{\n  \"merchant_name\": \"GREENLEAF MARKET\",\n  \"receipt_date\": \"2026-02-20\",\n  \"receipt_number\": \"GL-568151\",\n  \"subtotal\": 88.99,\n  \"tax\": 15.13,\n  \"total\": 104.12\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "GREENLEAF MARKET\n32 Station Road, Brookfield\nTel 555-0165\nReceipt #: GL-568151\nDate: 20/02/2026 17:39\nOrange juice    4.19\nPasta 500g    12.65\nCheddar 400g    19.30\nBasmati rice 2kg    20.97\nFree-range eggs    9.50\nSourdough loaf x2    22.38\nSubtotal    88.99\nVAT 17%    15.13\nTOTAL    104.12\nCash    120.00\nChange    15.88\nThank you for shopping local"
+      }
+    },
+    {
+      "id": "r02",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 13.63,
+        "stages": {
+          "ocr_s": 7.35,
+          "model_s": 6.27
+        },
+        "fields": {
+          "merchant_name": "RIVERSIDE GROCER",
+          "receipt_date": "2026-03-22",
+          "receipt_number": "GL-1Z5BB0",
+          "subtotal": 233.1,
+          "tax": 39.63,
+          "total": 272.73
+        },
+        "raw_output": "{\n  \"merchant_name\": \"RIVERSIDE GROCER\",\n  \"receipt_date\": \"2026-03-22\",\n  \"receipt_number\": \"GL-1Z5BB0\",\n  \"subtotal\": 233.1,\n  \"tax\": 39.63,\n  \"total\": 272.73\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "RIVERSIDE GROCER\n144 Canal Walk, Riverton\nTel 555-0158\nReceipt #: GL-1Z5BB0\nDate: 22/03/2026 08:54\nTomatoes x3    70.80\nPasta 500g x2    11.30\nFree-range eggs x2    43.26\nOat milk 1L x3    63.00\nCheddar 400g x2    44.74\nSubtotal    233.10\nVAT 17%    39.63\nTOTAL    272.73\nCash    280.00\nChange    7.27\nThank you for shopping local"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.43,
+        "stages": {
+          "model_s": 22.43
+        },
+        "fields": {
+          "merchant_name": "RIVERSIDE GROCER",
+          "receipt_date": "2026-03-22",
+          "receipt_number": "GL-1Z5BB0",
+          "subtotal": 233.1,
+          "tax": 39.63,
+          "total": 272.73
+        },
+        "raw_output": "{\n  \"merchant_name\": \"RIVERSIDE GROCER\",\n  \"receipt_date\": \"2026-03-22\",\n  \"receipt_number\": \"GL-1Z5BB0\",\n  \"subtotal\": 233.1,\n  \"tax\": 39.63,\n  \"total\": 272.73\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r03",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 20.82,
+        "stages": {
+          "model_s": 20.82
+        },
+        "fields": {
+          "merchant_name": "SUNRISE MINI MART",
+          "receipt_date": "2026-02-26",
+          "receipt_number": "GL-002978",
+          "subtotal": 220.58,
+          "tax": null,
+          "total": 220.58
+        },
+        "raw_output": "{\n  \"merchant_name\": \"SUNRISE MINI MART\",\n  \"receipt_date\": \"2026-02-26\",\n  \"receipt_number\": \"GL-002978\",\n  \"subtotal\": 220.58,\n  \"tax\": null,\n  \"total\": 220.58\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 17.49,
+        "stages": {
+          "ocr_s": 7.95,
+          "model_s": 9.54
+        },
+        "fields": {
+          "merchant_name": "SUNRISE MINI MART",
+          "receipt_date": "2026-02-26",
+          "receipt_number": "GL-002978",
+          "subtotal": 220.58,
+          "tax": null,
+          "total": 220.58
+        },
+        "raw_output": "{\n  \"merchant_name\": \"SUNRISE MINI MART\",\n  \"receipt_date\": \"2026-02-26\",\n  \"receipt_number\": \"GL-002978\",\n  \"subtotal\": 220.58,\n  \"tax\": null,\n  \"total\": 220.58\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "SUNRISE MINI MART\n211 Orchard Lane, Ashford\nTel 555-0166\nReceipt #: GL-002978\nDate: 26/02/2026 15:09\nFree-range eggs x3    33.51\nSourdough loaf x3    52.05\nTomatoes    23.34\nCheddar 400g x3    61.50\nOrange juice x2    37.24\nBasmati rice 2kg    12.94\nSubtotal    220.58\nTOTAL    220.58\nCash    230.00\nChange    9.42\nThank you for shopping local"
+      }
+    },
+    {
+      "id": "r04",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 12.58,
+        "stages": {
+          "ocr_s": 6.83,
+          "model_s": 5.75
+        },
+        "fields": {
+          "merchant_name": "HILLTOP FOODS",
+          "receipt_date": "2026-08-27",
+          "receipt_number": "GL-614S0",
+          "subtotal": 154.99,
+          "tax": 26.35,
+          "total": 181.34
+        },
+        "raw_output": "{\n  \"merchant_name\": \"HILLTOP FOODS\",\n  \"receipt_date\": \"2026-08-27\",\n  \"receipt_number\": \"GL-614S0\",\n  \"subtotal\": 154.99,\n  \"tax\": 26.35,\n  \"total\": 181.34\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "HILLTOP FOODS\n94 Elm Avenue, Riverton\nTel555-0188\nReceipt #: GL-614S0\nDate: 27/08/2026 16:49\nCheddar 400g    18.84\nOat milk 1L x3    34.47\nOrange juice x2    16.76\nApples 1.2kg x2    41.02\nTomatoes    11.80\nEree-range eggs x2    32.10\nSubtotal    154.99\nVAT 17%    26.35\nTOTAL    181.34\nCash    200.00\nChange    18.66\nThank you for shopping local"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 19.31,
+        "stages": {
+          "model_s": 19.31
+        },
+        "fields": {
+          "merchant_name": "HILLTOP FOODS",
+          "receipt_date": "2026-08-27",
+          "receipt_number": "GL-614S0",
+          "subtotal": 154.99,
+          "tax": 26.35,
+          "total": 181.34
+        },
+        "raw_output": "{\n  \"merchant_name\": \"HILLTOP FOODS\",\n  \"receipt_date\": \"2026-08-27\",\n  \"receipt_number\": \"GL-614S0\",\n  \"subtotal\": 154.99,\n  \"tax\": 26.35,\n  \"total\": 181.34\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r05",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.04,
+        "stages": {
+          "model_s": 22.04
+        },
+        "fields": {
+          "merchant_name": "QUARRY ROAD MARKET",
+          "receipt_date": "2026-02-19",
+          "receipt_number": "GL-283792",
+          "subtotal": 94.17,
+          "tax": null,
+          "total": 94.17
+        },
+        "raw_output": "{\n  \"merchant_name\": \"QUARRY ROAD MARKET\",\n  \"receipt_date\": \"2026-02-19\",\n  \"receipt_number\": \"GL-283792\",\n  \"subtotal\": 94.17,\n  \"tax\": null,\n  \"total\": 94.17\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 23.31,
+        "stages": {
+          "ocr_s": 13.59,
+          "model_s": 9.72
+        },
+        "fields": {
+          "merchant_name": "QUARRY ROAD MARKET",
+          "receipt_date": "2026-02-19",
+          "receipt_number": "GL-283792",
+          "subtotal": 94.17,
+          "tax": null,
+          "total": 94.17
+        },
+        "raw_output": "{\n  \"merchant_name\": \"QUARRY ROAD MARKET\",\n  \"receipt_date\": \"2026-02-19\",\n  \"receipt_number\": \"GL-283792\",\n  \"subtotal\": 94.17,\n  \"tax\": null,\n  \"total\": 94.17\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "QUARRY ROAD MARKET\n2 Cedar Court, Brookfield\nTel 555-0169\nReceipt #: GL-283792\nDate: 19/02/2026 11:07\nOrange juice    7.22\nBasmati rice 2kg    13.72\nTomatoes x3    73.23\nSubtotal    94.17\nTOTAL    94.17\nCash    100.00\nChange    5.83\nThank you for shopping local"
+      }
+    },
+    {
+      "id": "r06",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 13.83,
+        "stages": {
+          "ocr_s": 6.86,
+          "model_s": 6.97
+        },
+        "fields": {
+          "merchant_name": "BIRCHWOOD STORES",
+          "receipt_date": "2023-08-17",
+          "receipt_number": "GL-05095",
+          "subtotal": 46.34,
+          "tax": 7.88,
+          "total": 54.22
+        },
+        "raw_output": "{\n  \"merchant_name\": \"BIRCHWOOD STORES\",\n  \"receipt_date\": \"2023-08-17\",\n  \"receipt_number\": \"GL-05095\",\n  \"subtotal\": 46.34,\n  \"tax\": 7.88,\n  \"total\": 54.22\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "BIRCHWOOD STORES\n155 Canal Halk. Springfield\n1e1 555-0153\nBeceipt GL-05095\n0at61 17/83/2826 20:50\nOrange juice    16.29\nCheddar 400g    5.23\nFree-ranpe ergs ?    7.78\nSourdough Toaf    15.10\nBasmiti rice 2kg    1.94\nSubtotal    46.34\n7.88\nTOTAL    54.22\nCash    60.00\nChange    5.78\nThank you for shopping local"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 20.77,
+        "stages": {
+          "model_s": 20.77
+        },
+        "fields": {
+          "merchant_name": "BIRCHWOOD STORES",
+          "receipt_date": "2026-03-17",
+          "receipt_number": "GL-05095",
+          "subtotal": 46.34,
+          "tax": 7.68,
+          "total": 54.22
+        },
+        "raw_output": "{\n  \"merchant_name\": \"BIRCHWOOD STORES\",\n  \"receipt_date\": \"2026-03-17\",\n  \"receipt_number\": \"GL-05095\",\n  \"subtotal\": 46.34,\n  \"tax\": 7.68,\n  \"total\": 54.22\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "conflict",
+          "tax": "conflict",
+          "total": "conflict"
+        }
+      }
+    },
+    {
+      "id": "r07",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 23.73,
+        "stages": {
+          "model_s": 23.73
+        },
+        "fields": {
+          "merchant_name": "Blue Heron Books",
+          "receipt_date": "2026-03-17",
+          "receipt_number": "INV-80737",
+          "subtotal": 67.17,
+          "tax": 5.54,
+          "total": 72.71
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Blue Heron Books\",\n  \"receipt_date\": \"2026-03-17\",\n  \"receipt_number\": \"INV-80737\",\n  \"subtotal\": 67.17,\n  \"tax\": 5.54,\n  \"total\": 72.71\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 13.64,
+        "stages": {
+          "ocr_s": 4.9,
+          "model_s": 8.74
+        },
+        "fields": {
+          "merchant_name": "Blue Heron Books",
+          "receipt_date": "2026-03-17",
+          "receipt_number": "INV-80737",
+          "subtotal": 67.17,
+          "tax": 5.54,
+          "total": 72.71
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Blue Heron Books\",\n  \"receipt_date\": \"2026-03-17\",\n  \"receipt_number\": \"INV-80737\",\n  \"subtotal\": 67.17,\n  \"tax\": 5.54,\n  \"total\": 72.71\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Blue Heron Books\n85 Mill Street, Lakeside\nInvoice No. INV-80737    Mar 17, 2026\n3 x Bookmark set    $31.32\n1 x Gift wrap    $23.30\n2 x Greeting card    $4.56\n1 x Scented candle    $7.99\nSubtotal    $67.17\nSales Tax (8.25%)    $5.54\nTotal    $72.71\nPaid by card    $72.71\nExchanges within 30 days - 555-0159"
+      }
+    },
+    {
+      "id": "r08",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 10.6,
+        "stages": {
+          "ocr_s": 4.22,
+          "model_s": 6.37
+        },
+        "fields": {
+          "merchant_name": "Lantern Lane Gifts",
+          "receipt_date": "2026-04-17",
+          "receipt_number": "INV-519S50",
+          "subtotal": 61.62,
+          "tax": 5.08,
+          "total": 66.7
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Lantern Lane Gifts\",\n  \"receipt_date\": \"2026-04-17\",\n  \"receipt_number\": \"INV-519S50\",\n  \"subtotal\": 61.62,\n  \"tax\": 5.08,\n  \"total\": 66.70\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Lantern Lane Gifts\n184 Orchard Lane, Fairview\nInvoice No. INV-519S50    Apr 17, 2026\n2 x Bookmark set    $8.22\n2 x Greeting card    $26.74\n1 x Scented candle    $14.98\n1 x Gift wrap    $11.68\nSubtotal    $61.62\nSales Tax (8.25%)    $5.08\nTotal    $66.70\nPaid by card    $66.70\nExchanges within 30 days - 555-0182"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 21.5,
+        "stages": {
+          "model_s": 21.5
+        },
+        "fields": {
+          "merchant_name": "Lantern Lane Gifts",
+          "receipt_date": "2026-04-17",
+          "receipt_number": "INV-519S5O",
+          "subtotal": 61.62,
+          "tax": 5.08,
+          "total": 66.7
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Lantern Lane Gifts\",\n  \"receipt_date\": \"2026-04-17\",\n  \"receipt_number\": \"INV-519S5O\",\n  \"subtotal\": 61.62,\n  \"tax\": 5.08,\n  \"total\": 66.7\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r09",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 19.79,
+        "stages": {
+          "model_s": 19.79
+        },
+        "fields": {
+          "merchant_name": "Copperfield Stationers",
+          "receipt_date": "2026-04-13",
+          "receipt_number": "INV-948214",
+          "subtotal": 226.58,
+          "tax": 18.69,
+          "total": 245.27
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Copperfield Stationers\",\n  \"receipt_date\": \"2026-04-13\",\n  \"receipt_number\": \"INV-948214\",\n  \"subtotal\": 226.58,\n  \"tax\": 18.69,\n  \"total\": 245.27\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 14.7,
+        "stages": {
+          "ocr_s": 6.67,
+          "model_s": 8.03
+        },
+        "fields": {
+          "merchant_name": "Copperfield Stationers",
+          "receipt_date": "2026-04-13",
+          "receipt_number": "INV-948214",
+          "subtotal": 226.58,
+          "tax": 18.69,
+          "total": 245.27
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Copperfield Stationers\",\n  \"receipt_date\": \"2026-04-13\",\n  \"receipt_number\": \"INV-948214\",\n  \"subtotal\": 226.58,\n  \"tax\": 18.69,\n  \"total\": 245.27\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Copperfield Stationers\n136 Canal Walk, Springfield\nInvoice No.INV-948214    Apr 13, 2026\n1x Fountain pen    $15.29\n3 Scented candle    $72.99\n3  Gift wrap    $29.25\n1 Notebook A5    $12.37\n3 Paperback novel    $72.45\n1 Photo frame    $24.23\nSubtotal    $226.58\nSales Tax (8.25%)    $18.69\nTotal    $245.27\nPaid by card    $245.27\nExchanges within 30 days -555-0127"
+      }
+    },
+    {
+      "id": "r10",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 13.29,
+        "stages": {
+          "ocr_s": 7.14,
+          "model_s": 6.14
+        },
+        "fields": {
+          "merchant_name": "Wren &Willow",
+          "receipt_date": "2026-01-24",
+          "receipt_number": "INV-18101",
+          "subtotal": 39.3,
+          "tax": null,
+          "total": 39.3
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Wren &Willow\",\n  \"receipt_date\": \"2026-01-24\",\n  \"receipt_number\": \"INV-18101\",\n  \"subtotal\": 39.3,\n  \"tax\": null,\n  \"total\": 39.3\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "Wren &Willow\n113Harbor Road,Springfield\nInvoiceNo.INV-18101    Jan 24,2026\n3x Notebook A5    $10.50\n1xGift wrap    $13.77\n1x Greeting card    $11.57\n1 Fountain pen    $3.46\nTotal    $39.30\nPaid by card    $39.30\nExchanges within 30days 555-0187"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.21,
+        "stages": {
+          "model_s": 22.21
+        },
+        "fields": {
+          "merchant_name": "Wren & Willow",
+          "receipt_date": "2026-01-24",
+          "receipt_number": "INV-18101",
+          "subtotal": 39.3,
+          "tax": null,
+          "total": 39.3
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Wren & Willow\",\n  \"receipt_date\": \"2026-01-24\",\n  \"receipt_number\": \"INV-18101\",\n  \"subtotal\": 39.3,\n  \"tax\": null,\n  \"total\": 39.3\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r11",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 19.81,
+        "stages": {
+          "model_s": 19.81
+        },
+        "fields": {
+          "merchant_name": "Marigold Home",
+          "receipt_date": "2026-02-24",
+          "receipt_number": "INV-541465",
+          "subtotal": 119.09,
+          "tax": 9.82,
+          "total": 128.91
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Marigold Home\",\n  \"receipt_date\": \"2026-02-24\",\n  \"receipt_number\": \"INV-541465\",\n  \"subtotal\": 119.09,\n  \"tax\": 9.82,\n  \"total\": 128.91\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 13.67,
+        "stages": {
+          "ocr_s": 5.98,
+          "model_s": 7.69
+        },
+        "fields": {
+          "merchant_name": "Marigold Home",
+          "receipt_date": "2026-02-24",
+          "receipt_number": "INV-541465",
+          "subtotal": 119.09,
+          "tax": 9.82,
+          "total": 128.91
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Marigold Home\",\n  \"receipt_date\": \"2026-02-24\",\n  \"receipt_number\": \"INV-541465\",\n  \"subtotal\": 119.09,\n  \"tax\": 9.82,\n  \"total\": 128.91\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Marigold Home\n62 Orchard Lane, Riverton\nInvoice No. INV-541465    Feb 24,2026\n2 x Paperback novel    $36.68\n1 x Scented candle    $16.21\n3  Greeting card    $33.57\n2  Gift wrap    $25.68\n1 x Notebook A5    $3.25\n2  Fountain pen    $3.70\nSubtotal    $119.09\nSales Tax (8.25%)    $9.82\nTotal    $128.91\nPaid by card    $128.91\nExchanges within 30 days - 555-0115"
+      }
+    },
+    {
+      "id": "r12",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 16.0,
+        "stages": {
+          "ocr_s": 7.52,
+          "model_s": 8.48
+        },
+        "fields": {
+          "merchant_name": "Saltmarsh Outfitters",
+          "receipt_date": "2026-04-14",
+          "receipt_number": "INV-111717",
+          "subtotal": 122.41,
+          "tax": 10.1,
+          "total": 132.51
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Saltmarsh Outfitters\",\n  \"receipt_date\": \"2026-04-14\",\n  \"receipt_number\": \"INV-111717\",\n  \"subtotal\": 122.41,\n  \"tax\": 10.10,\n  \"total\": 132.51\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Saltmarsh Outfitters\n151 Orchard Lane.Brookield\nImvoice No.INV-111717    Apr 14, 2026\n3  Nolebook A5    $46.17\n3 Paperback novel    $39.78\n1Bookmark set    $18.28\n3  Pholo framo    $18.18\nSublotal    $122.41\nSales Tax (8.25%)    $10.10\nTatal    $132.51\nPaid by card    $132.51\nErchongosnin 30days-500-0143"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.36,
+        "stages": {
+          "model_s": 22.36
+        },
+        "fields": {
+          "merchant_name": "Saltmarsh Outfitters",
+          "receipt_date": "2026-04-14",
+          "receipt_number": "INV-111717",
+          "subtotal": 122.41,
+          "tax": 10.1,
+          "total": 132.51
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Saltmarsh Outfitters\",\n  \"receipt_date\": \"2026-04-14\",\n  \"receipt_number\": \"INV-111717\",\n  \"subtotal\": 122.41,\n  \"tax\": 10.10,\n  \"total\": 132.51\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r13",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 31.07,
+        "stages": {
+          "model_s": 31.07
+        },
+        "fields": {
+          "merchant_name": "Copper Kettle Cafe",
+          "receipt_date": "2026-01-25",
+          "receipt_number": "T80845",
+          "subtotal": 105.09,
+          "tax": 5.25,
+          "total": 110.34
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Copper Kettle Cafe\",\n  \"receipt_date\": \"2026-01-25\",\n  \"receipt_number\": \"T80845\",\n  \"subtotal\": 105.09,\n  \"tax\": 5.25,\n  \"total\": 110.34\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 25.13,
+        "stages": {
+          "ocr_s": 14.37,
+          "model_s": 10.76
+        },
+        "fields": {
+          "merchant_name": "Copper Kettle Cafe",
+          "receipt_date": "2026-01-25",
+          "receipt_number": "T80845",
+          "subtotal": 105.09,
+          "tax": 5.25,
+          "total": 110.34
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Copper Kettle Cafe\",\n  \"receipt_date\": \"2026-01-25\",\n  \"receipt_number\": \"T80845\",\n  \"subtotal\": 105.09,\n  \"tax\": 5.25,\n  \"total\": 110.34\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Copper Kettle Cafe\n200 Harbor Road, Fairview\nTrans: T80845    25.01.2026 12:50\nTable 4 - Till 2\n3 Avocado toast    61.50\n2 Flat white    23.38\n1 Soup of the day    6.56\n3 Croissant    13.65\nNet    105.09\nGST 5%    5.25\nAMOUNT DUE    110.34\nCash tendered    130.00\nChange    19.66\nService not included"
+      }
+    },
+    {
+      "id": "r14",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 18.56,
+        "stages": {
+          "ocr_s": 9.63,
+          "model_s": 8.93
+        },
+        "fields": {
+          "merchant_name": "Maple Street Deli",
+          "receipt_date": "2026-01-20",
+          "receipt_number": "TS85Z965",
+          "subtotal": 74.78,
+          "tax": 3.74,
+          "total": 78.52
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Maple Street Deli\",\n  \"receipt_date\": \"2026-01-20\",\n  \"receipt_number\": \"TS85Z965\",\n  \"subtotal\": 74.78,\n  \"tax\": 3.74,\n  \"total\": 78.52\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Maple Street Deli\n164 Station Road, Springfield\nTrans: TS85Z965    20.01.2026 15:03\nTable 4 - Till 2\n1 Croissant    23.89\n1 Blueberry muffin    14.96\n1 Avocado toast    16.23\n1 Club sandwich    19.70\nNet    74.78\nGST 5%    3.74\nAMOUNT DUE    78.52\nCash tendered    80.00\nChange    1.48\nService not included"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 27.5,
+        "stages": {
+          "model_s": 27.5
+        },
+        "fields": {
+          "merchant_name": "Maple Street Deli",
+          "receipt_date": "2026-01-20",
+          "receipt_number": "TS85Z965",
+          "subtotal": 74.78,
+          "tax": 3.74,
+          "total": 78.52
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Maple Street Deli\",\n  \"receipt_date\": \"2026-01-20\",\n  \"receipt_number\": \"TS85Z965\",\n  \"subtotal\": 74.78,\n  \"tax\": 3.74,\n  \"total\": 78.52\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r15",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.59,
+        "stages": {
+          "model_s": 22.59
+        },
+        "fields": {
+          "merchant_name": "The Rusty Spoon",
+          "receipt_date": "2026-07-14",
+          "receipt_number": "T9490668",
+          "subtotal": 37.52,
+          "tax": null,
+          "total": 37.52
+        },
+        "raw_output": "{\n  \"merchant_name\": \"The Rusty Spoon\",\n  \"receipt_date\": \"2026-07-14\",\n  \"receipt_number\": \"T9490668\",\n  \"subtotal\": 37.52,\n  \"tax\": null,\n  \"total\": 37.52\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 15.92,
+        "stages": {
+          "ocr_s": 6.91,
+          "model_s": 9.01
+        },
+        "fields": {
+          "merchant_name": "The Rusty Spoon",
+          "receipt_date": "2026-07-14",
+          "receipt_number": "T9490668",
+          "subtotal": 37.52,
+          "tax": null,
+          "total": 37.52
+        },
+        "raw_output": "{\n  \"merchant_name\": \"The Rusty Spoon\",\n  \"receipt_date\": \"2026-07-14\",\n  \"receipt_number\": \"T9490668\",\n  \"subtotal\": 37.52,\n  \"tax\": null,\n  \"total\": 37.52\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "The Rusty Spoon\n230 Orchard Lane,Riverton\nTrans:T9490668    14.072026 18:11\nTable4Till2\n1 Iced tea    6.54\n1 Croissant    1.64\n3 Club sandwich    29.34\nNet    37.52\nAMOUNT DUE    37.52\nCash tendered    40.00\nChange    2.48\nService not included"
+      }
+    },
+    {
+      "id": "r16",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 12.04,
+        "stages": {
+          "ocr_s": 6.12,
+          "model_s": 5.92
+        },
+        "fields": {
+          "merchant_name": "Morning Tide Coffee",
+          "receipt_date": "2026-02-17",
+          "receipt_number": "T51085B0",
+          "subtotal": 69.52,
+          "tax": null,
+          "total": 69.52
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Morning Tide Coffee\",\n  \"receipt_date\": \"2026-02-17\",\n  \"receipt_number\": \"T51085B0\",\n  \"subtotal\": 69.52,\n  \"tax\": null,\n  \"total\": 69.52\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "Morning Tide Coffee\n134 Harbor Road,Brookfield\nTrans:T51085B0    17.02.202619:24\nTable4-Till 2\n1 iced tea    12.88\n1 Croissant    23.05\n1 Flat white    1552\n1 Club sandwich    16.80\n1.Cappuccino    E1.27\nAMOUNT DUE    69.52\nCash tendered    80.00\nChange    10.48\nServicenotincluded"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 25.93,
+        "stages": {
+          "model_s": 25.93
+        },
+        "fields": {
+          "merchant_name": "Morning Tide Coffee",
+          "receipt_date": "2026-02-17",
+          "receipt_number": "T51085B0",
+          "subtotal": 69.52,
+          "tax": null,
+          "total": 69.52
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Morning Tide Coffee\",\n  \"receipt_date\": \"2026-02-17\",\n  \"receipt_number\": \"T51085B0\",\n  \"subtotal\": 69.52,\n  \"tax\": null,\n  \"total\": 69.52\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r17",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.91,
+        "stages": {
+          "model_s": 22.91
+        },
+        "fields": {
+          "merchant_name": "Olive Grove Bistro",
+          "receipt_date": "2026-02-13",
+          "receipt_number": "T1577188",
+          "subtotal": 92.82,
+          "tax": null,
+          "total": 92.82
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Olive Grove Bistro\",\n  \"receipt_date\": \"2026-02-13\",\n  \"receipt_number\": \"T1577188\",\n  \"subtotal\": 92.82,\n  \"tax\": null,\n  \"total\": 92.82\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 19.73,
+        "stages": {
+          "ocr_s": 10.12,
+          "model_s": 9.62
+        },
+        "fields": {
+          "merchant_name": "Olive Grove Bistro",
+          "receipt_date": "2026-02-13",
+          "receipt_number": "T1577188",
+          "subtotal": 92.82,
+          "tax": null,
+          "total": 92.82
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Olive Grove Bistro\",\n  \"receipt_date\": \"2026-02-13\",\n  \"receipt_number\": \"T1577188\",\n  \"subtotal\": 92.82,\n  \"tax\": null,\n  \"total\": 92.82\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "Olive Grove Bistro\n82 Harbor Road,Fairview\nTrans: T1577188    13.02.2026 13:04\nTable 4 - Till 2\n1 Iced tea    5.24\n1 Cappuccino    20.73\n1 Club sandwich    3.88\n2 Soup of the day    23.28\n3 Blueberry muffin    39.69\nNet    92.82\nAMOUNT DUE    92.82\nCash tendered    100.00\nChange    7.18\nService not included"
+      }
+    },
+    {
+      "id": "r18",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 12.43,
+        "stages": {
+          "ocr_s": 4.48,
+          "model_s": 7.95
+        },
+        "fields": {
+          "merchant_name": "Juniper Bakehouse",
+          "receipt_date": "2026-06-15",
+          "receipt_number": "TransT0051056",
+          "subtotal": 67.58,
+          "tax": 3.38,
+          "total": 70.96
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Juniper Bakehouse\",\n  \"receipt_date\": \"2026-06-15\",\n  \"receipt_number\": \"TransT0051056\",\n  \"subtotal\": 67.58,\n  \"tax\": 3.38,\n  \"total\": 70.96\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Juniper Bakehouse\n65 Station Road,Ashford\nTransT0051056    15.06202609:49\nTable 4- Till 2\n1 Club sandwich    10.14\n1 Soup of the day    14.20\n2 Croissant    643.24\nNet    67.58\nGST 5%    3.38\nAMOUNT DUE\nCash tendered    80.00\nChange    9.04\nService not included"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 24.09,
+        "stages": {
+          "model_s": 24.09
+        },
+        "fields": {
+          "merchant_name": "Juniper Bakehouse",
+          "receipt_date": "2026-06-15",
+          "receipt_number": "TOO5IO56",
+          "subtotal": 667.58,
+          "tax": 3.38,
+          "total": 70.96
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Juniper Bakehouse\",\n  \"receipt_date\": \"2026-06-15\",\n  \"receipt_number\": \"TOO5IO56\",\n  \"subtotal\": 667.58,\n  \"tax\": 3.38,\n  \"total\": 70.96\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "conflict",
+          "tax": "conflict",
+          "total": "conflict"
+        }
+      }
+    },
+    {
+      "id": "r19",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.21,
+        "stages": {
+          "model_s": 22.21
+        },
+        "fields": {
+          "merchant_name": "HARBOR & PINE HARDWARE",
+          "receipt_date": "2026-06-24",
+          "receipt_number": "HP-81449",
+          "subtotal": 101.52,
+          "tax": 20.3,
+          "total": 121.82
+        },
+        "raw_output": "{\n  \"merchant_name\": \"HARBOR & PINE HARDWARE\",\n  \"receipt_date\": \"2026-06-24\",\n  \"receipt_number\": \"HP-81449\",\n  \"subtotal\": 101.52,\n  \"tax\": 20.30,\n  \"total\": 121.82\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 17.88,
+        "stages": {
+          "ocr_s": 7.98,
+          "model_s": 9.9
+        },
+        "fields": {
+          "merchant_name": "HARBOR & PINE HARDWARE",
+          "receipt_date": "2026-06-24",
+          "receipt_number": "HP-81449",
+          "subtotal": 101.52,
+          "tax": 20.3,
+          "total": 121.82
+        },
+        "raw_output": "{\n  \"merchant_name\": \"HARBOR & PINE HARDWARE\",\n  \"receipt_date\": \"2026-06-24\",\n  \"receipt_number\": \"HP-81449\",\n  \"subtotal\": 101.52,\n  \"tax\": 20.30,\n  \"total\": 121.82\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "HARBOR & PINE HARDWARE\n208 Cedar Court, Fairview . Tel 555-0188\nRef: HP-81449    Date: 2026-06-24\nPaint brush 50mm (1 @ 14.36)    $14.36\nClaw hammer (1 @ 13.99)    $13.99\nSpirit level (1 @ 19.09)    $19.09\nSandpaper P120 (1 @ 6.84)    $6.84\nWall plugs (3 @ 11.87)    $35.61\nCable ties (1 @ 14.47)    $14.47\nTrade discount    -$2.84\nSubtotal (excl. VAT)    $101.52\nVAT @ 20%    $20.30\nTOTAL    $121.82\nReturn by 2026-07-24 with this receipt\nTotal savings today: $2.84"
+      }
+    },
+    {
+      "id": "r20",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 15.74,
+        "stages": {
+          "ocr_s": 7.96,
+          "model_s": 7.78
+        },
+        "fields": {
+          "merchant_name": "IRONBRIDGE SUPPLY CO.",
+          "receipt_date": "2026-06-26",
+          "receipt_number": "HP-017380",
+          "subtotal": 150.88,
+          "tax": 30.18,
+          "total": 181.06
+        },
+        "raw_output": "{\n  \"merchant_name\": \"IRONBRIDGE SUPPLY CO.\",\n  \"receipt_date\": \"2026-06-26\",\n  \"receipt_number\": \"HP-017380\",\n  \"subtotal\": 150.88,\n  \"tax\": 30.18,\n  \"total\": 181.06\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "IRONBRIDGE SUPPLY CO.\n164 Beacon Hill, Lakeside . Tel 555-0102\nRef: HP-017380    Date: 2026-06-26\nPaint brush 50mm (1 @ 1.32)    $1.32\nSpirit level (1 @ 23.78)    $23.78\nMasking tape (1 @ 6.23)    $6.23\nCable ties (1 @ 24.60)    $24.60\nWood screws 4x40 (3 @ 17.87)    $53.61\nClaw hammer (2 @ 20.67)    $41.34\nSubtotal (excl. VAT)    $150.88\nVAT @ 20%    $30.18\nTOTAL    $181.06\nReturn by 2026-07-26 with this receipt"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 21.21,
+        "stages": {
+          "model_s": 21.21
+        },
+        "fields": {
+          "merchant_name": "IRONBRIDGE SUPPLY CO.",
+          "receipt_date": "2026-06-26",
+          "receipt_number": "HP-017380",
+          "subtotal": 150.88,
+          "tax": 30.18,
+          "total": 181.06
+        },
+        "raw_output": "{\n  \"merchant_name\": \"IRONBRIDGE SUPPLY CO.\",\n  \"receipt_date\": \"2026-06-26\",\n  \"receipt_number\": \"HP-017380\",\n  \"subtotal\": 150.88,\n  \"tax\": 30.18,\n  \"total\": 181.06\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r21",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 24.96,
+        "stages": {
+          "model_s": 24.96
+        },
+        "fields": {
+          "merchant_name": "FIELDSTONE TOOLS",
+          "receipt_date": "2026-06-15",
+          "receipt_number": "HP-8982104",
+          "subtotal": 83.36,
+          "tax": 16.67,
+          "total": 100.03
+        },
+        "raw_output": "{\n  \"merchant_name\": \"FIELDSTONE TOOLS\",\n  \"receipt_date\": \"2026-06-15\",\n  \"receipt_number\": \"HP-8982104\",\n  \"subtotal\": 83.36,\n  \"tax\": 16.67,\n  \"total\": 100.03\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 21.78,
+        "stages": {
+          "ocr_s": 11.81,
+          "model_s": 9.98
+        },
+        "fields": {
+          "merchant_name": "FIELDSTONE TOOLS",
+          "receipt_date": "2026-06-15",
+          "receipt_number": "HP-8982104",
+          "subtotal": 83.36,
+          "tax": 16.67,
+          "total": 100.03
+        },
+        "raw_output": "{\n  \"merchant_name\": \"FIELDSTONE TOOLS\",\n  \"receipt_date\": \"2026-06-15\",\n  \"receipt_number\": \"HP-8982104\",\n  \"subtotal\": 83.36,\n  \"tax\": 16.67,\n  \"total\": 100.03\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "FIELDSTONE TOOLS\n204 Cedar Court,BrookfieldTel 555-0135\nRef:HP-8982104    Date:2026-06-15\nWood screws 4x40(1 @ 19.87)    $19.87\nSpirit level(1@7.88    $7.88\nClaw hammer (1 @ 4.34)    $4.34\nMasking tape (3 @ 17.97)    $53.91\nTrade discount    -$2.64\nSubtotal(excl.VAT)    $83.36\nVAT @ 20%    $16.67\nTOTAL    $100.03\nReturn by 2026-07-15 with this receipt\nTotal savings today: $2.64"
+      }
+    },
+    {
+      "id": "r22",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 14.01,
+        "stages": {
+          "ocr_s": 7.73,
+          "model_s": 6.28
+        },
+        "fields": {
+          "merchant_name": "NORTHGATE HARDWARE",
+          "receipt_date": "2026-06-23",
+          "receipt_number": "HP-6Z112B",
+          "subtotal": 126.49,
+          "tax": 25.3,
+          "total": 151.79
+        },
+        "raw_output": "{\n  \"merchant_name\": \"NORTHGATE HARDWARE\",\n  \"receipt_date\": \"2026-06-23\",\n  \"receipt_number\": \"HP-6Z112B\",\n  \"subtotal\": 126.49,\n  \"tax\": 25.30,\n  \"total\": 151.79\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "NORTHGATE HARDWARE\n142 Elm Avenue,LakesideTel 555-0184\nRef:HP-6Z112B    Date:2026-06-23\nSandpaper P120 2 @ 6.34    $12.68\nPaint brush 50mm (1 @ 20.57)    $20.57\nMasking tape (1 @.11.28    $11.28\nCable ties2@9.03    $18.06\nWood screws 4x401@12.09)    $12.09\nSpirit level3@17.27)    $51.81\nSubtotal(excl.VAT)    $126.49\nVAT@20%    $25.30\nTOTAL    $151.79\nReturn by 2026-07-23 with this receipt"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.96,
+        "stages": {
+          "model_s": 22.96
+        },
+        "fields": {
+          "merchant_name": "NORTHGATE HARDWARE",
+          "receipt_date": "2026-06-23",
+          "receipt_number": "HP-6Z112B",
+          "subtotal": 126.49,
+          "tax": 25.3,
+          "total": 151.79
+        },
+        "raw_output": "{\n  \"merchant_name\": \"NORTHGATE HARDWARE\",\n  \"receipt_date\": \"2026-06-23\",\n  \"receipt_number\": \"HP-6Z112B\",\n  \"subtotal\": 126.49,\n  \"tax\": 25.30,\n  \"total\": 151.79\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r23",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 20.3,
+        "stages": {
+          "model_s": 20.3
+        },
+        "fields": {
+          "merchant_name": "ANVIL & OAK",
+          "receipt_date": "2026-02-23",
+          "receipt_number": "HP-882834",
+          "subtotal": 108.25,
+          "tax": 21.65,
+          "total": 129.9
+        },
+        "raw_output": "{\n  \"merchant_name\": \"ANVIL & OAK\",\n  \"receipt_date\": \"2026-02-23\",\n  \"receipt_number\": \"HP-882834\",\n  \"subtotal\": 108.25,\n  \"tax\": 21.65,\n  \"total\": 129.90\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 28.04,
+        "stages": {
+          "ocr_s": 16.21,
+          "model_s": 11.83
+        },
+        "fields": {
+          "merchant_name": "ANVIL & OAK",
+          "receipt_date": "2026-02-23",
+          "receipt_number": "HP-882834",
+          "subtotal": 108.25,
+          "tax": 21.65,
+          "total": 129.9
+        },
+        "raw_output": "{\n  \"merchant_name\": \"ANVIL & OAK\",\n  \"receipt_date\": \"2026-02-23\",\n  \"receipt_number\": \"HP-882834\",\n  \"subtotal\": 108.25,\n  \"tax\": 21.65,\n  \"total\": 129.90\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "ANVIL & OAK\n198 Canal Walk, Lakeside:Tel 555-0178\nRef: HP-882834    Date: 2026-02-23\nCable ties (1 @ 22.51)    $22.51\nClaw hammer (3 @ 16.57)    $49.71\nWood screws 4x40 (1 @ 9.68)    $9.68\nSandpaper P120 (1 @ 19.88)    $19.88\nWall plugs (1 @ 9.47)    $9.47\nTrade discount    -$3.00\nSubtotal (excl. VAT)    $108.25\nVAT @ 20%    $21.65\nTOTAL    $129.90\nReturn by 2026-03-25 with this receipt\nTotal savings today: $3.00"
+      }
+    },
+    {
+      "id": "r24",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 37.64,
+        "stages": {
+          "ocr_s": 13.56,
+          "model_s": 24.08
+        },
+        "fields": {
+          "merchant_name": "KEYSTONEBUILDERS DEPOT",
+          "receipt_date": "2026-07-19",
+          "receipt_number": "HP-04S5515",
+          "subtotal": 45.06,
+          "tax": 9.01,
+          "total": 54.07
+        },
+        "raw_output": "{\n  \"merchant_name\": \"KEYSTONEBUILDERS DEPOT\",\n  \"receipt_date\": \"2026-07-19\",\n  \"receipt_number\": \"HP-04S5515\",\n  \"subtotal\": 45.06,\n  \"tax\": 9.01,\n  \"total\": 54.07\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "KEYSTONEBUILDERS DEPOT\n36Station Road.Rlverton-Tl555-0183\nReT:HP-04S5515    Date:2026-07-19\nHasklng tape(12.30)    DE'Z+\nClaw hammer (1@ 13.15)    $13.15\nCoblotios(1@6.59    659\nSandpaper P120(123.02    $23.02\nSubtotal (excl.VAT)    $45.06\nVAT20    $9.01\nTOTAL    $54.07\nReturn by 2026-08-18 with this recelpt"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 30.06,
+        "stages": {
+          "model_s": 30.06
+        },
+        "fields": {
+          "merchant_name": "KEYSTONE BUILDERS DEPOT",
+          "receipt_date": "2026-07-19",
+          "receipt_number": "HP-0455515",
+          "subtotal": 45.06,
+          "tax": 9.01,
+          "total": 54.07
+        },
+        "raw_output": "{\n  \"merchant_name\": \"KEYSTONE BUILDERS DEPOT\",\n  \"receipt_date\": \"2026-07-19\",\n  \"receipt_number\": \"HP-0455515\",\n  \"subtotal\": 45.06,\n  \"tax\": 9.01,\n  \"total\": 54.07\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r25",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 23.2,
+        "stages": {
+          "model_s": 23.2
+        },
+        "fields": {
+          "merchant_name": "Oakridge Pharmacy",
+          "receipt_date": "2026-08-13",
+          "receipt_number": "RX-4502831",
+          "subtotal": 43.81,
+          "tax": 3.07,
+          "total": 46.88
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Oakridge Pharmacy\",\n  \"receipt_date\": \"2026-08-13\",\n  \"receipt_number\": \"RX-4502831\",\n  \"subtotal\": 43.81,\n  \"tax\": 3.07,\n  \"total\": 46.88\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 11.94,
+        "stages": {
+          "ocr_s": 4.44,
+          "model_s": 7.5
+        },
+        "fields": {
+          "merchant_name": "Oakridge Pharmacy",
+          "receipt_date": "2026-08-13",
+          "receipt_number": "RX-4502831",
+          "subtotal": 43.81,
+          "tax": 3.07,
+          "total": 46.88
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Oakridge Pharmacy\",\n  \"receipt_date\": \"2026-08-13\",\n  \"receipt_number\": \"RX-4502831\",\n  \"subtotal\": 43.81,\n  \"tax\": 3.07,\n  \"total\": 46.88\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Oakridge Pharmacy\n176 Harbor Road, Lakeside\n13 August 2026 12:14\nNo. RX-4502831\nHand cream    6.85\nToothpaste    7.59\nSparkling water    2.38\nGranola    4.76\nTissues    24.89\nMember discount    -2.66\nItems: 8\nSub-total    43.81\nTax 7%    3.07\nBALANCE DUE    46.88\nCash    60.00\nChange    13.12\nYou saved 2.66 today!\nPoints balance: 3668"
+      }
+    },
+    {
+      "id": "r26",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 11.26,
+        "stages": {
+          "ocr_s": 4.2,
+          "model_s": 7.06
+        },
+        "fields": {
+          "merchant_name": "Fairway Fresh",
+          "receipt_date": "2026-08-19",
+          "receipt_number": "RX-56161",
+          "subtotal": 162.04,
+          "tax": 11.34,
+          "total": 173.38
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Fairway Fresh\",\n  \"receipt_date\": \"2026-08-19\",\n  \"receipt_number\": \"RX-56161\",\n  \"subtotal\": 162.04,\n  \"tax\": 11.34,\n  \"total\": 173.38\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Fairway Fresh\n53 Harbor Road, Fairview\n19 August 2026 13:10\nNo. RX-56161\nGranola    47.56\nToothpaste    61.86\nPlasters    9.53\nHand cream    5.63\nSparkling water    15.38\nTissues    22.08\nItems: 11\nSub-total    162.04\nTax 7%    11.34\nBALANCE DUE    173.38\nCash    180.00\nChange    6.62\nPoints balance: 369"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 19.11,
+        "stages": {
+          "model_s": 19.11
+        },
+        "fields": {
+          "merchant_name": "Fairway Fresh",
+          "receipt_date": "2026-08-19",
+          "receipt_number": "RX-56161",
+          "subtotal": 162.04,
+          "tax": 11.34,
+          "total": 173.38
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Fairway Fresh\",\n  \"receipt_date\": \"2026-08-19\",\n  \"receipt_number\": \"RX-56161\",\n  \"subtotal\": 162.04,\n  \"tax\": 11.34,\n  \"total\": 173.38\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r27",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 23.74,
+        "stages": {
+          "model_s": 23.74
+        },
+        "fields": {
+          "merchant_name": "Clearwater Chemist",
+          "receipt_date": "2026-06-25",
+          "receipt_number": "RX-758881",
+          "subtotal": 125.61,
+          "tax": null,
+          "total": 125.61
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Clearwater Chemist\",\n  \"receipt_date\": \"2026-06-25\",\n  \"receipt_number\": \"RX-758881\",\n  \"subtotal\": 125.61,\n  \"tax\": null,\n  \"total\": 125.61\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 13.08,
+        "stages": {
+          "ocr_s": 5.36,
+          "model_s": 7.72
+        },
+        "fields": {
+          "merchant_name": "Clearwater Chemist",
+          "receipt_date": "2026-06-25",
+          "receipt_number": "RX-758881",
+          "subtotal": 125.61,
+          "tax": null,
+          "total": 125.61
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Clearwater Chemist\",\n  \"receipt_date\": \"2026-06-25\",\n  \"receipt_number\": \"RX-758881\",\n  \"subtotal\": 125.61,\n  \"tax\": null,\n  \"total\": 125.61\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "Clearwater Chemist\n235 Canal Walk, Riverton\n25 June 2026 08:30\nNo.RX-758881\nBananas    23.81\nGranola    15.59\nPlasters    32.68\nToothpaste    8.58\nHand cream    42.75\nVitamin C 60ct    4.11\nMember discount    -1.91\nItems: 11\nSub-total    125.61\nBALANCE DUE    125.61\nCash    130.00\nChange    4.39\nYou saved 1.91 today!\nPoints balance: 2551"
+      }
+    },
+    {
+      "id": "r28",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 11.01,
+        "stages": {
+          "ocr_s": 4.47,
+          "model_s": 6.54
+        },
+        "fields": {
+          "merchant_name": "Brookside Pantry",
+          "receipt_date": "2026-08-16",
+          "receipt_number": "RX-04957",
+          "subtotal": 109.37,
+          "tax": 7.66,
+          "total": 117.03
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Brookside Pantry\",\n  \"receipt_date\": \"2026-08-16\",\n  \"receipt_number\": \"RX-04957\",\n  \"subtotal\": 109.37,\n  \"tax\": 7.66,\n  \"total\": 117.03\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        },
+        "ocr_text": "Brookside Pantry\nl53Orchard Lane, Springfield\n16 August 202614:51\nNo.RX-04957\nTissues    5.19\nBananas    9.30\nVitamin C 60ct    22.79\nHand cream    1.63\nPlasters    3.80\nSparkling.water    66.66\nItems: 9\nStb total    109.37\nTax 7%    7.66\nBALANCE DUE    117.03\nCashi    130.00\nChange    12.97\nPoints balance2759"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 20.4,
+        "stages": {
+          "model_s": 20.4
+        },
+        "fields": {
+          "merchant_name": "Brookside Pantry",
+          "receipt_date": "2026-08-16",
+          "receipt_number": "RX-04957",
+          "subtotal": 109.37,
+          "tax": 7.66,
+          "total": 117.03
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Brookside Pantry\",\n  \"receipt_date\": \"2026-08-16\",\n  \"receipt_number\": \"RX-04957\",\n  \"subtotal\": 109.37,\n  \"tax\": 7.66,\n  \"total\": 117.03\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    },
+    {
+      "id": "r29",
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 20.67,
+        "stages": {
+          "model_s": 20.67
+        },
+        "fields": {
+          "merchant_name": "Meadowlark Market",
+          "receipt_date": "2026-06-26",
+          "receipt_number": "RX-60872",
+          "subtotal": 175.23,
+          "tax": null,
+          "total": 175.23
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Meadowlark Market\",\n  \"receipt_date\": \"2026-06-26\",\n  \"receipt_number\": \"RX-60872\",\n  \"subtotal\": 175.23,\n  \"tax\": null,\n  \"total\": 175.23\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        }
+      },
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 12.48,
+        "stages": {
+          "ocr_s": 3.25,
+          "model_s": 9.24
+        },
+        "fields": {
+          "merchant_name": "Meadowlark Market",
+          "receipt_date": "2026-06-26",
+          "receipt_number": "RX-60872",
+          "subtotal": 175.23,
+          "tax": null,
+          "total": 175.23
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Meadowlark Market\",\n  \"receipt_date\": \"2026-06-26\",\n  \"receipt_number\": \"RX-60872\",\n  \"subtotal\": 175.23,\n  \"tax\": null,\n  \"total\": 175.23\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "not_found",
+          "total": "ok"
+        },
+        "ocr_text": "Meadowlark Market\n178 Elm Avenue, Lakeside\n26 June 2026 08:31\nNo. RX-60872\nPlasters    61.17\nToothpaste    49.56\nHand cream    45.18\nVitamin C 60ct    21.32\nMember discount    -2.00\nItems: 9\nSub-total    175.23\nBALANCE DUE    175.23\nCash    180.00\nChange    4.77\nYou saved 2.00 today!\nPoints balance: 2094"
+      }
+    },
+    {
+      "id": "r30",
+      "ocr": {
+        "ok": true,
+        "error": null,
+        "seconds": 12.89,
+        "stages": {
+          "ocr_s": 6.13,
+          "model_s": 6.76
+        },
+        "fields": {
+          "merchant_name": "silverleaf Health",
+          "receipt_date": "2026-07-13",
+          "receipt_number": "RY-107618",
+          "subtotal": 75.74,
+          "tax": null,
+          "total": 81.04
+        },
+        "raw_output": "{\n  \"merchant_name\": \"silverleaf Health\",\n  \"receipt_date\": \"2026-07-13\",\n  \"receipt_number\": \"RY-107618\",\n  \"subtotal\": 75.74,\n  \"tax\": null,\n  \"total\": 81.04\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "conflict",
+          "tax": "not_found",
+          "total": "conflict"
+        },
+        "ocr_text": "silverleaf Health\n222 Station Road, Riverton\n13 July 202613:38\nNo.RY-107618\nHand cream    12.00\nBananas    SS'EZ\nPlasters    B6\"PE\nTissues    5.21\nItema: g\nSub-total    75.74\nTL XEI\nBALANCE DUE    81.04\nCash    0006\nchange    8.96\nPoints balance: 1504"
+      },
+      "direct": {
+        "ok": true,
+        "error": null,
+        "seconds": 22.83,
+        "stages": {
+          "model_s": 22.83
+        },
+        "fields": {
+          "merchant_name": "Silverleaf Health",
+          "receipt_date": "2026-07-13",
+          "receipt_number": "RX-107618",
+          "subtotal": 75.74,
+          "tax": 5.3,
+          "total": 81.04
+        },
+        "raw_output": "{\n  \"merchant_name\": \"Silverleaf Health\",\n  \"receipt_date\": \"2026-07-13\",\n  \"receipt_number\": \"RX-107618\",\n  \"subtotal\": 75.74,\n  \"tax\": 5.30,\n  \"total\": 81.04\n}",
+        "flags": {
+          "merchant_name": "ok",
+          "receipt_date": "ok",
+          "receipt_number": "ok",
+          "subtotal": "ok",
+          "tax": "ok",
+          "total": "ok"
+        }
+      }
+    }
+  ],
+  "wall_seconds": 1199.8
+}

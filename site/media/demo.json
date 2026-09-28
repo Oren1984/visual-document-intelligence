@@ -1,0 +1,32 @@
+{
+  "file": "site/media/demo.mp4",
+  "duration_s": 170.96,
+  "sha256": "636eeb2c588c56c0b563d89c7fda95232c4e08724952b6d42b456bfb6f4767dd",
+  "captions": 36,
+  "source": "screen recording of the local application (Playwright, Chromium) during one live run on sample r30",
+  "live_run": {
+    "run_id": "7a023a2df4cb",
+    "sample": "r30",
+    "seconds": {
+      "direct": 28.39,
+      "ocr": 12.38
+    }
+  },
+  "reviewer_actions": "scripted (Playwright); extraction is live local inference",
+  "narration": "synthetic, Kokoro-82M v1.0 (Apache-2.0) via kokoro-onnx, voice af_heart",
+  "audio_levels": {
+    "voice_dbfs_while_speaking": -20.5,
+    "music_dbfs_under_voice": -42.4,
+    "music_dbfs_without_voice": -32.0,
+    "music_below_voice_db": 21.9
+  },
+  "music": {
+    "track": "Airport Lounge",
+    "creator": "Kevin MacLeod",
+    "source": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Airport%20Lounge.mp3",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "sha256_of_source": "e20d316b541c72690a3b0311c9f3d40fd00717359ab7567d7df82a9316c1dec4",
+    "changes": "excerpt from the start trimmed to the video length, volume x0.2, side-chain ducked under the narration, 3 s fade-in, 4 s fade-out, re-encoded to AAC and mixed with the narration"
+  }
+}
